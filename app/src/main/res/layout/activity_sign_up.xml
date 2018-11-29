@@ -7,12 +7,42 @@
     tools:context=".SignUpActivity">
 
     <TextView
+        android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="@dimen/five"
+        android:layout_marginStart="@dimen/one"
+        android:layout_marginEnd="@dimen/one"
+        android:textSize="34sp"
+        android:text="@string/app_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/device_id_edit_text"
+        android:layout_width="@dimen/six"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/one"
+        android:layout_marginEnd="@dimen/one"
+        android:layout_marginTop="@dimen/three"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        android:hint="@string/device_id"
+        android:inputType="number" />
+
+    <Button
+        android:id="@+id/start_button"
+        android:layout_width="@dimen/five"
+        android:layout_height="wrap_content"
+        android:text="@string/start"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/device_id_edit_text"
+        android:layout_marginStart="@dimen/one"
+        android:layout_marginEnd="@dimen/one"
+        android:layout_marginTop="@dimen/three"
+        android:enabled="false"/>
 
 </android.support.constraint.ConstraintLayout>
