@@ -11,3 +11,4 @@ displays the data in real time
 + Data processed using an [[https://azure.microsoft.com/en-us/services/functions/][Azure Function]]
   - Data sent to database, indexed by device ID. Currently using a [[https://firebase.google.com/docs/database/][Firebase Realtime Database]]
   - Text message can be sent to alert unsafe driving (car problems detected by OBD, speeding, etc.) using [[https://www.twilio.com/][Twilio]]
+  - [[https://github.com/Bwall72/SeniorDesignAzureFunctions][Source]]
