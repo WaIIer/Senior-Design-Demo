@@ -12,6 +12,7 @@ class MonitorActivity : AppCompatActivity() {
     private lateinit var rpmSeekArc: SeekArc
     private lateinit var rpmText: TextView
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_monitor)
