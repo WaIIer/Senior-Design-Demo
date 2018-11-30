@@ -29,8 +29,7 @@ class SignUpActivity : AppCompatActivity() {
         startButton.setOnClickListener {
             val deviceId = deviceIdEditText.text.toString()
 
-            //TODO change to launch next activity
-            val intent = Intent(this, SignUpActivity::class.java)
+            val intent = Intent(this, MonitorActivity::class.java)
             intent.putExtra("DEVICE_ID", deviceId)
 
             startActivity(intent)

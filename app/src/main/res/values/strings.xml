@@ -2,4 +2,6 @@
     <string name="app_name">AutoTracker</string>
     <string name="device_id">Device ID</string>
     <string name="start">Start</string>
+    <string name="Speed">Speed</string>
+    <string name="RPM">RPM</string>
 </resources>

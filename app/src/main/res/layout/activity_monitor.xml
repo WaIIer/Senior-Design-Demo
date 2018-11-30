@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MonitorActivity">
+
+    <FrameLayout
+        android:id="@+id/speed_frame_layout"
+        android:layout_width="@dimen/six"
+        android:layout_height="@dimen/six"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="@dimen/three"
+        android:layout_marginStart="@dimen/one"
+        android:layout_marginEnd="@dimen/one"
+        android:padding="4dp">
+
+        <TextView
+            android:id="@+id/speed_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/Speed"
+            android:textSize="40sp"/>
+
+        <com.triggertrap.seekarc.SeekArc
+            android:id="@+id/speed_seek_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:touchInside="false"
+            android:layout_margin="@dimen/one"
+            android:padding="@dimen/seek_bar_padding"
+            app:clockwise="true"
+            app:max="300"
+            app:startAngle="270"
+            app:sweepAngle="180"
+            />
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/rpm_frame_layout"
+        android:layout_width="@dimen/six"
+        android:layout_height="@dimen/six"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/speed_frame_layout"
+        android:layout_marginTop="@dimen/two"
+        android:layout_marginStart="@dimen/one"
+        android:layout_marginEnd="@dimen/one"
+        android:padding="4dp">
+
+        <TextView
+            android:id="@+id/rpm_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/RPM"
+            android:textSize="40sp"/>
+
+        <com.triggertrap.seekarc.SeekArc
+            android:id="@+id/rpm_seek_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/one"
+            android:padding="@dimen/seek_bar_padding"
+            app:touchInside="false"
+            app:clockwise="true"
+            app:max="300"
+            app:startAngle="270"
+            app:sweepAngle="180"
+            />
+
+    </FrameLayout>
+
+</android.support.constraint.ConstraintLayout>
