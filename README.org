@@ -1,0 +1,13 @@
+* Senior Design Demo App
+Quick Android app to demo my senior design project.
+
+** Project
+Car monitoring system that sends car information/statistics, taken from the on board diagnostic (OBD-II) port, to a database. An external monitoring application then
+displays the data in real time
+
+*** How data gets to the app?
++ In the car, there is an ESP-32 connected to the OBD-II using [[https://freematics.com/pages/products/freematics-obd-ii-uart-adapter-mk2/][this]] adapter
++ Data transmitted over Wi-Fi (hotspot in the car, or the drive creates one using their phone)
++ Data processed using an [[https://azure.microsoft.com/en-us/services/functions/][Azure Function]]
+  - Data sent to database, indexed by device ID. Currently using a [[https://firebase.google.com/docs/database/][Firebase Realtime Database]]
+  - Text message can be sent to alert unsafe driving (car problems detected by OBD, speeding, etc.) using [[https://www.twilio.com/][Twilio]]
