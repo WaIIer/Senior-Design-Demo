@@ -4,8 +4,6 @@ import android.content.Context
 import android.content.SharedPreferences
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.view.View
 import android.widget.Switch
 import android.widget.TextView
 import android.widget.Toast
@@ -43,14 +41,12 @@ class MonitorActivity : AppCompatActivity() {
 
     private fun initFirebase() {
         val deviceId = intent.getStringExtra("DEVICE_ID")
-        Log.d("DEVICE ID", deviceId)
 
         firebaseDatabase = FirebaseDatabase.getInstance()
         firebaseDatabaseReference = firebaseDatabase.getReference("devices").child(deviceId)
 
         firebaseDatabaseReference.addValueEventListener(object : ValueEventListener {
             override fun onCancelled(p0: DatabaseError) {
-                Log.d("snapshot", p0.toString())
                 Toast.makeText(this@MonitorActivity,
                         "Failed to retrieve reading",
                         Toast.LENGTH_SHORT)
@@ -59,7 +55,6 @@ class MonitorActivity : AppCompatActivity() {
 
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 val reading = dataSnapshot.value.toString()
-                Log.d("onDataChange", reading)
                 setMeters(reading)
             }
 
@@ -69,7 +64,7 @@ class MonitorActivity : AppCompatActivity() {
     private fun initSharedPreferences() {
         preferences = getSharedPreferences(getString(R.string.app_name), Context.MODE_PRIVATE)
 
-        val startingUnit: String = preferences.getString("UNIT", getString(R.string.kmh))
+        val startingUnit = preferences.getString("UNIT", getString(R.string.kmh))
         if (startingUnit == getString(R.string.mph)) {
             unitHelper.speedUnit = getString(R.string.mph)
             unitSwitch.isChecked = true

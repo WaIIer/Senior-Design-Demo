@@ -11,4 +11,7 @@
     <string name="password">Password</string>
     <string name="Log_In">Log In</string>
     <string name="sign_up">Sign Up</string>
+    <string name="account_created">Account Created</string>
+    <string name="failed_to_create_account">Failed to create account</string>
+    <string name="failed_to_sign_in">Failed to sign in</string>
 </resources>
