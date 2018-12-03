@@ -7,4 +7,8 @@
     <string name="kmh">kmh</string>
     <string name="mph">mph</string>
     <string name="rpm_reading">%1$s\nRPM</string>
+    <string name="Email_Address">Email Address</string>
+    <string name="password">Password</string>
+    <string name="Log_In">Log In</string>
+    <string name="sign_up">Sign Up</string>
 </resources>
