@@ -4,4 +4,7 @@
     <string name="start">Start</string>
     <string name="Speed">Speed</string>
     <string name="RPM">RPM</string>
+    <string name="kmh">kmh</string>
+    <string name="mph">mph</string>
+    <string name="rpm_reading">%1$s\nRPM</string>
 </resources>

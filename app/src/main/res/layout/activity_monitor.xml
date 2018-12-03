@@ -6,48 +6,60 @@
     android:layout_height="match_parent"
     tools:context=".MonitorActivity">
 
-    <FrameLayout
-        android:id="@+id/speed_frame_layout"
-        android:layout_width="@dimen/six"
-        android:layout_height="@dimen/six"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="@dimen/three"
-        android:layout_marginStart="@dimen/one"
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/speed_constraint_layout"
+        android:layout_width="@dimen/seek_cl_width"
+        android:layout_height="@dimen/seek_cl_height"
         android:layout_marginEnd="@dimen/one"
-        android:padding="4dp">
+        android:layout_marginStart="@dimen/one"
+        android:layout_marginTop="@dimen/three"
+        android:padding="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/speed_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
             android:text="@string/Speed"
-            android:textSize="40sp"/>
+            android:textSize="@dimen/seek_bar_text_size"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <com.triggertrap.seekarc.SeekArc
             android:id="@+id/speed_seek_bar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:touchInside="false"
+            android:layout_height="match_parent"
             android:layout_margin="@dimen/one"
             android:padding="@dimen/seek_bar_padding"
+            android:scrollbarSize="4dp"
             app:clockwise="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             app:max="300"
             app:startAngle="270"
             app:sweepAngle="180"
+            app:touchInside="false"
+
             />
 
-    </FrameLayout>
+    </android.support.constraint.ConstraintLayout>
 
-    <FrameLayout
+    <android.support.constraint.ConstraintLayout
         android:id="@+id/rpm_frame_layout"
-        android:layout_width="@dimen/six"
-        android:layout_height="@dimen/six"
+        android:layout_width="@dimen/seek_cl_width"
+        android:layout_height="@dimen/seek_cl_height"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/speed_frame_layout"
+        app:layout_constraintTop_toBottomOf="@id/speed_constraint_layout"
         android:layout_marginTop="@dimen/two"
         android:layout_marginStart="@dimen/one"
         android:layout_marginEnd="@dimen/one"
@@ -57,13 +69,16 @@
             android:id="@+id/rpm_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
             android:text="@string/RPM"
-            android:textSize="40sp"/>
+            android:textSize="@dimen/seek_bar_text_size"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
 
         <com.triggertrap.seekarc.SeekArc
             android:id="@+id/rpm_seek_bar"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/one"
             android:padding="@dimen/seek_bar_padding"
@@ -74,6 +89,18 @@
             app:sweepAngle="180"
             />
 
-    </FrameLayout>
+    </android.support.constraint.ConstraintLayout>
+
+    <Switch
+        android:id="@+id/unit_switch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/one"
+        android:text="@string/kmh"
+        android:checked="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rpm_frame_layout" />
 
 </android.support.constraint.ConstraintLayout>

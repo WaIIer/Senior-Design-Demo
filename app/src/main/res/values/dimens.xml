@@ -7,4 +7,7 @@
     <dimen name="three">32dp</dimen>
     <dimen name="seek_bar_padding">16dp</dimen>
     <dimen name="two">30dp</dimen>
+    <dimen name="seek_bar_text_size">16sp</dimen>
+    <dimen name="seek_cl_height">175dp</dimen>
+    <dimen name="seek_cl_width">210dp</dimen>
 </resources>
